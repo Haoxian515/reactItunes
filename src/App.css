@@ -1,0 +1,51 @@
+.App {
+  /*margin-top: 50px;*/
+  margin: 0 auto;
+  height: 559px;
+  width: 375px;
+  margin-top: 20px;
+  background-color:white;
+  box-shadow: 3px 3px 5px 1px;
+}
+
+.Header{
+  /*background-color:red;*/
+  display: flex;
+  height: 10%;
+  width: 100%;
+}
+#Filler{
+  width: 10%;
+  padding-top: 5%;
+
+}
+
+#Library{
+  width: 80%;
+  text-align: center;
+  padding-top: 5%;
+
+}
+
+#Edit{
+  color: #EC0035;
+  width: 10%;
+  padding-top: 5%;
+
+}
+
+
+
+
+
+/*.Header .TopNav{
+  background-color:blue;
+  display: flex;
+  justify-content:space-evenly;
+  height: 100%;
+  width: 75%;
+}*/
+
+.Header div{
+  /*margin: 3%;*/
+}
