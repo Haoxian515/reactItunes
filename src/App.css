@@ -1,5 +1,6 @@
 .App {
   /*margin-top: 50px;*/
+  position: relative;
   margin: 0 auto;
   height: 559px;
   width: 375px;
@@ -14,6 +15,68 @@
   height: 10%;
   width: 100%;
 }
+
+.Menu{
+  position: relative;
+  overflow: hidden;
+  height: 80%;
+  width: 100%;
+  background-color: blue;
+}
+
+.Song{
+    overflow-y: scroll;
+  width: 50%;
+  height: 40%;
+
+}
+
+.BottomNav{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 20%;
+  width: 100%;
+}
+
+.NowplayingBottomLayer{
+  /*background-color: rgba(0,0,0,1);*/
+  background-color: grey;
+  opacity: 0.5;
+  position: absolute;
+  height: 50%;
+  bottom: 50%;
+  width: 100%;
+}
+
+.NowplayingTopLayer{
+  background-color: transparent;
+  position: absolute;
+  bottom: 50%;
+  height: 50%;
+  width: 100%;
+  /*bottom: 50%;*/
+}
+
+.NowplayingTopLayer img{
+  /*background-color: blue;*/
+  opacity: 1;
+  height: 80%;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.Navigation{
+  position: absolute;
+  background-color: blue;
+  bottom: 0px;
+  height: 50%;
+  width: 100%;
+
+}
+
+
 #Filler{
   width: 10%;
   padding-top: 5%;
@@ -46,6 +109,3 @@
   width: 75%;
 }*/
 
-.Header div{
-  /*margin: 3%;*/
-}
