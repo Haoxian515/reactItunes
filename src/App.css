@@ -9,6 +9,19 @@
   box-shadow: 3px 3px 5px 1px;
 }
 
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 .Header{
   /*background-color:red;*/
   display: flex;
@@ -18,7 +31,8 @@
 
 .Menu{
   position: relative;
-  overflow: hidden;
+overflow: scroll;
+    overflow-x: hidden;
   height: 80%;
   width: 100%;
   background-color: blue;
@@ -30,6 +44,8 @@
   height: 40%;
 
 }
+
+
 
 .BottomNav{
   position: absolute;
@@ -96,6 +112,9 @@
   padding-top: 5%;
 
 }
+
+
+
 
 
 
