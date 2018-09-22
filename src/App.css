@@ -31,17 +31,20 @@ html {
 
 .Menu{
   position: relative;
-overflow: scroll;
-    overflow-x: hidden;
+  text-align: center;
+  overflow: scroll;
+  overflow-x: hidden;
   height: 80%;
   width: 100%;
-  background-color: blue;
+  background-color: white;
 }
 
 .Song{
-    overflow-y: scroll;
-  width: 50%;
+  overflow-y: scroll;
+  padding: 2%;
+  width: 45%;
   height: 40%;
+  border-radius: 5%;
 
 }
 
@@ -66,12 +69,25 @@ overflow: scroll;
 }
 
 .NowplayingTopLayer{
+  display: flex;
   background-color: transparent;
   position: absolute;
   bottom: 50%;
   height: 50%;
   width: 100%;
   /*bottom: 50%;*/
+}
+.NowplayingTopLayer .not-playing{
+
+  /*background-color: red;*/
+  color:red;
+  padding-top: 5%;
+  padding-left: 3%;
+
+}
+
+.NowplayingTopLayer .play-button-icon{
+    padding-left: 25%;
 }
 
 .NowplayingTopLayer img{
@@ -81,15 +97,6 @@ overflow: scroll;
   padding: 5px;
   margin-left: 10px;
   border-radius: 10px;
-}
-
-.Navigation{
-  position: absolute;
-  background-color: blue;
-  bottom: 0px;
-  height: 50%;
-  width: 100%;
-
 }
 
 
@@ -111,6 +118,26 @@ overflow: scroll;
   width: 10%;
   padding-top: 5%;
 
+}
+
+
+.Navigation{
+  position: absolute;
+  background-color: white;
+  bottom: 0px;
+  height: 50%;
+  width: 100%;
+
+}
+
+.icon-container{
+  display: flex;
+}
+
+.menu-icon{
+  text-align: center;
+  padding-top: 2%;
+  flex-basis:20%;
 }
 
 
