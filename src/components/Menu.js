@@ -27,14 +27,10 @@ class Menu extends Component{
 			<div className="Menu">
 		        {
 		          songs.map(function(movie){
-		            return <div>
-					            <div className="li-song">
-
-						            <img src="/musiclogo.png"></img>
-						            <div>{movie.title}</div>
-						            <div>{movie.artist}</div>
-					            </div>
-					            
+		            return <div className="song">
+					            <img src="/musiclogo.png"></img>
+					            <div>{movie.title}</div>
+					            <div>{movie.artist}</div>
 			            </div>;
 		          })
 		        }
