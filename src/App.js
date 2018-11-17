@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Header from "./components/Header"
-import Menu from "./components/Menu"
+import SongList from "./components/SongList"
 import BottomNav from "./components/BottomNav"
+import LibraryMenu from "./components/LibraryMenu"
+
+import {BrowserRouter as Router} from "react-router-dom"
+import Route from "react-router-dom/Route"
 import './App.css';
 // <Menu/>
 import Music from "./components/Music"
@@ -9,14 +13,19 @@ import Music from "./components/Music"
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header/>
-        
-        <Music/>
-        <BottomNav/>
+    	<Router>
+	      <div className="App">
+	      	
+	      	<div className="AppLayer">
+		        <Header/>
+		        <LibraryMenu/>
+		        <SongList/>
+	        </div>
+	        <BottomNav/>
 
-        
-      </div>
+	        
+	      </div>
+    	</Router>
     );
   }
 }
