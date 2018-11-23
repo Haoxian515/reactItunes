@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MenuItems from "../menuItemList.json"
 import "../App.css"
 
 
@@ -6,15 +7,14 @@ class LibraryMenu extends Component{
 	render(){
 		return(
 			<div>
-				<h2>Library</h2>
-				<div>Playlists</div>
-				<div>Artists</div>
-				<div>Albums</div>
-				<div>Songs</div>
-				<div>Downloaded Music</div>
+				{
+					MenuItems.map(function(item){
+						return <h4 className="menu-item">{item.name}</h4>
+					})
+				}
 			</div>
 
-		)
+		);
 	}
 }
 

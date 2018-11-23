@@ -33,7 +33,7 @@ html {
 .Header{
   /*background-color:red;*/
   display: flex;
-  height: 10%;
+  height: 2rem;
   width: 100%;
 }
 
@@ -143,12 +143,16 @@ html {
 
 }
 
-#Library{
+.Library{
   width: 80%;
   text-align: center;
   padding-top: 5%;
-
 }
+
+.hidden{
+  opacity: 0;
+}
+
 
 #Edit{
   color: #EC0035;
@@ -177,9 +181,35 @@ html {
   flex-basis:20%;
 }
 
+.menu-item{
+  font-weight: normal;
+  color:#EE5550;
+  margin: 0;
+  padding: 0.8rem;
+  border-top:    1px solid  #DCDCDC;
+  border-bottom:    1px solid  #DCDCDC;
+
+}
+
+.h2-single{
+  padding-left: 0.8rem;
+}
 
 
 
+/**
+============= ANIMATIONS
+*/
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(1,1)}
+    to {opacity: 1;}
+}
+.fade-in-element {
+  animation: fade-in 2s;
+  width: 80%;
+  text-align: center;
+  padding-top: 5%;
+}
 
 
 

@@ -10,22 +10,38 @@ import './App.css';
 // <Menu/>
 import Music from "./components/Music"
 
+function print(){
+	console.log(document.getElementById("AppLayer2"))
+}
+
+
+
 class App extends Component {
+	componentDidMount() {
+		console.log("Componentdid mount")
+		print()
+	  }
+
   render() {
+
+
+
     return (
     	<Router>
+
 	      <div className="App">
-	      	
-	      	<div className="AppLayer">
-		        <Header/>
+	      	<Header/>
+	      	<div className="AppLayer" id="AppLayer2">
+		        <h2 className="h2-single">Library</h2>
 		        <LibraryMenu/>
 		        <SongList/>
 	        </div>
 	        <BottomNav/>
 
-	        
+	      
 	      </div>
     	</Router>
+
     );
   }
 }
