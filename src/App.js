@@ -28,16 +28,15 @@ function onScroll(onScrollObj){
 
 		onScrollObj.addEventListener("scroll",function(){
 			// ===== START HERE GETTIN client bounding elements
+			//scroll and checks if obj1 overlaps obj2 if true fades out false fades in
 			let obj1 = document.getElementById("header").getBoundingClientRect()
 			let obj2 = document.getElementById("h2-single").getBoundingClientRect()
 
-			console.log(document.getElementById("h2-single").getBoundingClientRect())
-			console.log(document.getElementById("header").getBoundingClientRect())
+			// console.log(document.getElementById("h2-single").getBoundingClientRect())
+			// console.log(document.getElementById("header").getBoundingClientRect())
 
 			let hiddenLibrary = document.getElementById("hiddenLibrary")
-			console.log(hiddenLibrary.classList)
 			if(checkWhenOverLap(obj1, obj2)){
-				console.log("HEY HEY HEY OVERLOAP")
 				
 				hiddenLibrary.classList.replace("hidden", "fade-in-element")
 				// console.log(hiddenLibrary.classList)
@@ -52,15 +51,22 @@ function onScroll(onScrollObj){
 
 class App extends Component {
 
+	state={
+		currentDisplay:"home"
+	}
+
+	displayNewLayer = (newLayer) => {
+		this.setState({currentDisplay:newLayer})
+	}
 
 
 	componentDidMount() {
 		console.log("Componentdid mount")
-		let appLayer2 = document.getElementById("AppLayer2")
+		let appLayer = document.getElementById("AppLayer")
 		let h2single = document.getElementById("h2-single")
 		let header = document.getElementById("header")
 
-		onScroll(appLayer2)
+		onScroll(appLayer)
 		// printObj(header)
 	  }
 
@@ -73,7 +79,7 @@ class App extends Component {
 
 	      <div className="App">
 	      	<Header/>
-	      	<div className="AppLayer" id="AppLayer2">
+	      	<div className="AppLayer" id="AppLayer">
 		        <h2 className="h2-single" id="h2-single">Library</h2>
 		        <LibraryMenu/>
 		        <SongList/>
