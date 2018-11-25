@@ -38,11 +38,11 @@ function print(){
 class Header extends Component{
 	render(){
 		return(
-			<div className="Header">
+			<div className="Header" id="header">
 				<div id="Filler">
 					
 				</div>
-				<div className="Library hidden">
+				<div className="Library hidden" id="hiddenLibrary">
 					Library
 				</div>
 				<div id="Edit">
