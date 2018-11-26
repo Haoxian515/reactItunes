@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
+
 import Header from "./components/Header"
-import SongList from "./components/SongList"
 import BottomNav from "./components/BottomNav"
-import LibraryMenu from "./components/LibraryMenu"
+import AppLayer from "./components/AppLayer"
 
 import {BrowserRouter as Router} from "react-router-dom"
 import Route from "react-router-dom/Route"
@@ -24,66 +25,75 @@ function checkWhenOverLap(obj1, obj2){
 
 }
 
-function onScroll(onScrollObj){
+function onScroll(){
 
-		onScrollObj.addEventListener("scroll",function(){
-			// ===== START HERE GETTIN client bounding elements
-			//scroll and checks if obj1 overlaps obj2 if true fades out false fades in
-			let obj1 = document.getElementById("header").getBoundingClientRect()
-			let obj2 = document.getElementById("h2-single").getBoundingClientRect()
 
-			// console.log(document.getElementById("h2-single").getBoundingClientRect())
-			// console.log(document.getElementById("header").getBoundingClientRect())
 
-			let hiddenLibrary = document.getElementById("hiddenLibrary")
-			if(checkWhenOverLap(obj1, obj2)){
+		/** ON SCROLL JAVASCRIPT AND DOM */
+		// onScrollObj.addEventListener("scroll",function(){
+		// 	// ===== START HERE GETTIN client bounding elements
+		// 	//scroll and checks if obj1 overlaps obj2 if true fades out false fades in
+		// 	let obj1 = document.getElementById("header").getBoundingClientRect()
+		// 	let obj2 = document.getElementById("h2-single").getBoundingClientRect()
+
+		// 	// console.log(document.getElementById("h2-single").getBoundingClientRect())
+		// 	// console.log(document.getElementById("header").getBoundingClientRect())
+
+		// 	let hiddenLibrary = document.getElementById("hiddenLibrary")
+		// 	if(checkWhenOverLap(obj1, obj2)){
 				
-				hiddenLibrary.classList.replace("hidden", "fade-in-element")
-				// console.log(hiddenLibrary.classList)
-			}else{
-				hiddenLibrary.classList.replace("fade-in-element", "fade-out-element")
-				hiddenLibrary.classList.add("hidden")
-			}
+		// 		hiddenLibrary.classList.replace("hidden", "fade-in-element")
+		// 		// console.log(hiddenLibrary.classList)
+		// 	}else{
+		// 		hiddenLibrary.classList.replace("fade-in-element", "fade-out-element")
+		// 		hiddenLibrary.classList.add("hidden")
+		// 	}
 
-		})
+		// })
 
 	}
 
 class App extends Component {
 
-	state={
-		currentDisplay:"home"
+	constructor(props){
+		super(props);
+
+		this.state = {
+			headerOverlapped: "false"
+		}
+		this.headerRef = React.createRef();
+
+		// console.log(this.myRef)
 	}
 
 	displayNewLayer = (newLayer) => {
 		this.setState({currentDisplay:newLayer})
 	}
 
-
 	componentDidMount() {
-		console.log("Componentdid mount")
-		let appLayer = document.getElementById("AppLayer")
-		let h2single = document.getElementById("h2-single")
-		let header = document.getElementById("header")
+		ReactDOM.findDOMNode(this.nv).addEventListener("click", function(){
+			console.log("HELHDIOAGFOIWAGOI")
+		})
+		// addEventListener('scroll', this.handleScroll);
+		// ReactDOM.findDOMNode(this.domNode)
+		// ReactDOM.findDOMNode(this.refAppLayer).addEventListener('scroll', this.onScroll());
+		// console.log("Componentdid mount")
+		// let appLayer = document.getElementById("AppLayer")
+		// let h2single = document.getElementById("h2-single")
+		// let header = document.getElementById("header")
 
-		onScroll(appLayer)
+		// onScroll(appLayer)
 		// printObj(header)
 	  }
 
   render() {
 
-
-
     return (
     	<Router>
 
 	      <div className="App">
-	      	<Header/>
-	      	<div className="AppLayer" id="AppLayer">
-		        <h2 className="h2-single" id="h2-single">Library</h2>
-		        <LibraryMenu/>
-		        <SongList/>
-	        </div>
+	      	<Header ref={elem => this.nv = elem}/>
+	      	<AppLayer />
 	        <BottomNav/>
 
 	      
