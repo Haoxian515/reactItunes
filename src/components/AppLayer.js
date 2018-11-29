@@ -20,7 +20,8 @@ class AppLayer extends Component{
 		super(props)
 
 		this.state = {
-			currentPage: "home"
+			currentPage: "home",
+			libheadSize: 0
 		}
 
 		
@@ -29,12 +30,11 @@ class AppLayer extends Component{
 
 	componentDidMount(){
 
-		// console.log(ReactDOM.findDOMNode(this.refs["libhead"]))
 	}
 
 	scrolling(){
 		console.log("AppLayer Component scrolling22")
-		console.log(ReactDOM.findDOMNode(this.refs["libhead"]))
+		console.log(ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect())
 	}
 
 

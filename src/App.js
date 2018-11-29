@@ -79,7 +79,7 @@ class App extends Component {
     	<Router>
 
 	      <div className="App">
-	      	<Header ref={elem => this.headerRef = elem}/>
+	      	<Header />
 	      	<AppLayer onScroll={()=>this.scrolling()}/>
 	        <BottomNav/>
 
