@@ -47,17 +47,20 @@ class AppLayer extends Component{
 	}
 
 	findMySize(){
-		let wow = ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect().top
+		// let wow = ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect().top
 
 		// this.setState({top: 0})
-		console.log(this.refHeader.getBoundingClientRect())
-		console.log("sweet christmas")
+		console.log(this.refHeader.getBoundingClientRect().top)
+		this.props.myDivSize(this.refHeader.getBoundingClientRect().top)
+		// console.log("sweet christmas")
+					// <div className="AppLayer" id="AppLayer"  onScroll= { this.findMySize.bind(this) }>
+
 	}
 
 
 	render(){
 		return(
-			<div className="AppLayer" id="AppLayer"  onScroll={ this.findMySize.bind(this) }>
+			<div className="AppLayer" id="AppLayer"  onScroll= { this.findMySize.bind(this) }>
 				<LibHeader ref="libhead"/>
 				<LibraryMenu/>
 				<SongList/>

@@ -68,7 +68,7 @@ class App extends Component {
 
 	getDiveSize(currDiv){
 		console.log(currDiv)
-		// console.log("APPP JS MAIN")
+		console.log("APPP JS MAIN")
 
 	}
 
