@@ -11,3 +11,5 @@ function MenuItem(props){
 }
 
 export default MenuItem;
+
+// PASS prop upwarsds to appllayer tto do math

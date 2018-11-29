@@ -36,13 +36,18 @@ function print(){
 // animateHTML().init()
 
 class Header extends Component{
+
+	constructor(props){
+		super(props)
+	}
+
 	render(){
 		return(
 			<div className="Header" id="header">
 				<div id="Filler">
 					
 				</div>
-				<div className="Library hidden" id="hiddenLibrary">
+				<div className="Library" id="hiddenLibrary">
 					Library
 				</div>
 				<div id="Edit">

@@ -59,7 +59,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			headerOverlapped: "false"
+			headerClass: "Header"
 		}
 		this.headerRef = React.createRef();
 
@@ -70,30 +70,17 @@ class App extends Component {
 		this.setState({currentDisplay:newLayer})
 	}
 
-	componentDidMount() {
-		ReactDOM.findDOMNode(this.nv).addEventListener("click", function(){
-			console.log("HELHDIOAGFOIWAGOI")
-		})
-		// addEventListener('scroll', this.handleScroll);
-		// ReactDOM.findDOMNode(this.domNode)
-		// ReactDOM.findDOMNode(this.refAppLayer).addEventListener('scroll', this.onScroll());
-		// console.log("Componentdid mount")
-		// let appLayer = document.getElementById("AppLayer")
-		// let h2single = document.getElementById("h2-single")
-		// let header = document.getElementById("header")
-
-		// onScroll(appLayer)
-		// printObj(header)
-	  }
-
+	test = () => {
+		this.setState({headerClass: 'hidden'})
+	}
   render() {
 
     return (
     	<Router>
 
 	      <div className="App">
-	      	<Header ref={elem => this.nv = elem}/>
-	      	<AppLayer />
+	      	<Header ref={elem => this.headerRef = elem}/>
+	      	<AppLayer onScroll={()=>this.scrolling()}/>
 	        <BottomNav/>
 
 	      
