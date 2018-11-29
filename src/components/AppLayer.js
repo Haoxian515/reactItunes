@@ -20,31 +20,44 @@ class AppLayer extends Component{
 		super(props)
 
 		this.state = {
-			currentPage: "home",
-			libheadSize: 0
+			top: 0
 		}
+
+		this.refHeader; 
+
 
 		
 
 	}
 
 	componentDidMount(){
-
+		this.refHeader = ReactDOM.findDOMNode(this.refs["libhead"])
+		console.log(this.refHeader)
+		console.log("WHTA IS GOING ON")
+		// let wow = ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect().top
+		// this.setState({refLibHeader: ReactDOM.findDOMNode(this.refs["libhead"])})
+		// console.log(wow)
+		// this.setState({top: wow})
+		// this.findMySize(wow)
+		// console.log(this.state.refHeader)
 	}
 
-	scrolling(){
-		console.log("AppLayer Component scrolling22")
-		console.log(ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect())
+	updateState(what){
+		this.setState({top:what})
 	}
 
+	findMySize(){
+		let wow = ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect().top
 
-	doesOverlap(){
-
+		// this.setState({top: 0})
+		console.log(this.refHeader.getBoundingClientRect())
+		console.log("sweet christmas")
 	}
+
 
 	render(){
 		return(
-			<div className="AppLayer" id="AppLayer" onScroll={()=>this.scrolling()}>
+			<div className="AppLayer" id="AppLayer"  onScroll={ this.findMySize.bind(this) }>
 				<LibHeader ref="libhead"/>
 				<LibraryMenu/>
 				<SongList/>

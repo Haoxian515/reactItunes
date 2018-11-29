@@ -35,15 +35,21 @@ function print(){
 // }
 // animateHTML().init()
 
+
+
 class Header extends Component{
 
 	constructor(props){
 		super(props)
 	}
 
+	test = () => {
+		console.log("TESING HEADER")
+	}
+
 	render(){
 		return(
-			<div className="Header" id="header">
+			<div className="Header" id="header" ref="refHeader">
 				<div id="Filler">
 					
 				</div>

@@ -25,8 +25,6 @@ function checkWhenOverLap(obj1, obj2){
 
 }
 
-function onScroll(){
-
 
 
 		/** ON SCROLL JAVASCRIPT AND DOM */
@@ -51,7 +49,6 @@ function onScroll(){
 
 		// })
 
-	}
 
 class App extends Component {
 
@@ -59,28 +56,31 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			headerClass: "Header"
+			headerClass: "Header",
+			refHeader: "null",
+			headerTop:0,
+			titleTop: 0
+
 		}
-		this.headerRef = React.createRef();
 
 		// console.log(this.myRef)
 	}
 
-	displayNewLayer = (newLayer) => {
-		this.setState({currentDisplay:newLayer})
+	getDiveSize(currDiv){
+		console.log(currDiv)
+		// console.log("APPP JS MAIN")
+
 	}
 
-	test = () => {
-		this.setState({headerClass: 'hidden'})
-	}
+
   render() {
 
     return (
     	<Router>
 
-	      <div className="App">
-	      	<Header />
-	      	<AppLayer onScroll={()=>this.scrolling()}/>
+	      <div className="App" >
+	      	<Header/>
+	      	<AppLayer myDivSize={this.getDiveSize.bind(this,"appComp")} />
 	        <BottomNav/>
 
 	      
