@@ -7,7 +7,7 @@ function menuItemSelected(content){
 	console.log(content)
 	if(content == "playlists"){
 		let appLayer = document.getElementById("AppLayer")
-		console.log(appLayer)
+		// console.log(appLayer)
 		appLayer.classList.replace("AppLayer", "slide-out-applayer")
 	}
 	// console.log("does it work?")
@@ -33,7 +33,7 @@ class LibraryMenu extends Component{
 		this.state = {
 			items: MenuItems
 		}
-		console.log(this.state)
+		// console.log(this.state)
 	}
 
 	componentDidMount(){

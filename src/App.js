@@ -11,22 +11,6 @@ import './App.css';
 // <Menu/>
 import Music from "./components/Music"
 
-function printObj(argObj){
-	console.log(argObj.offsetBottom)
-}
-
-function checkWhenOverLap(obj1, obj2){
-
-	if(obj2.top < obj1.top){
-		return true;
-	}
-		return false;
-
-
-}
-
-
-
 		/** ON SCROLL JAVASCRIPT AND DOM */
 		// onScrollObj.addEventListener("scroll",function(){
 		// 	// ===== START HERE GETTIN client bounding elements
@@ -58,19 +42,45 @@ class App extends Component {
 		this.state = {
 			headerClass: "Header",
 			refHeader: "null",
-			headerTop:0,
-			titleTop: 0
+			isHeaderHidden: true
 
 		}
-
+		this.mainHeader;
 		// console.log(this.myRef)
 	}
 
-	getDiveSize(currDiv){
-		console.log(currDiv)
-		console.log("APPP JS MAIN")
+	componentDidMount(){
+		this.mainHeader = ReactDOM.findDOMNode(this.refs["mainHeader"])
+		// console.log("this is main header " + this.mainHeader.top)
+		// this.setState({
+		// 	mainHeaderTop: this.mainHeader.top
+		// })
 
 	}
+
+	checkOverlap(divTop){
+		console.log(divTop)
+		// console.log("APPP JS MAIN")
+		// console.log(this.mainHeader.getBoundingClientRect().height )
+
+		// this.mainHeader.getBoundingClientRect().height
+		if(divTop < this.mainHeader.getBoundingClientRect().height){
+			this.setState({
+				isHeaderHidden: true
+			})
+			console.log(this.state.isHeaderHidden)
+
+		}else{
+			
+			this.setState({
+				isHeaderHidden: false
+			})
+			console.log(this.state.isHeaderHidden)
+
+		}
+	}
+
+
 
 
   render() {
@@ -79,8 +89,8 @@ class App extends Component {
     	<Router>
 
 	      <div className="App" >
-	      	<Header/>
-	      	<AppLayer myDivSize={this.getDiveSize.bind(this,"appComp")} />
+	      	<Header ref="mainHeader" isHeaderHidden={this.state.isHeaderHidden}/>
+	      	<AppLayer myDivSize={this.checkOverlap.bind(this)} />
 	        <BottomNav/>
 
 	      

@@ -12,7 +12,7 @@
   margin: 0 auto;
   height: 80%;
   width: 375px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   position: relative;
   overflow: auto;
 }
@@ -33,7 +33,7 @@ html {
 .Header{
   /*background-color:red;*/
   display: flex;
-  margin-bottom: 0.1rem;
+  margin-bottom: 1rem;
   height: 2rem;
   width: 100%;
 }

@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import "../App.css"
 
-function print(){
-	console.log("testing print func")
-}
-
 // var animateHTML = function () {
 //   var elems,
 //   //try to get Library div height 
@@ -41,19 +37,18 @@ class Header extends Component{
 
 	constructor(props){
 		super(props)
+		console.log("HEADER CLASS" + this.props.isHeaderHidden)
 	}
 
-	test = () => {
-		console.log("TESING HEADER")
-	}
 
 	render(){
 		return(
 			<div className="Header" id="header" ref="refHeader">
+
 				<div id="Filler">
 					
 				</div>
-				<div className="Library" id="hiddenLibrary">
+				<div className={this.props.isHeaderHidden ? 'hidden Library' : 'Library fade-in-element' }>
 					Library
 				</div>
 				<div id="Edit">

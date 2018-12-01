@@ -33,7 +33,6 @@ class AppLayer extends Component{
 	componentDidMount(){
 		this.refHeader = ReactDOM.findDOMNode(this.refs["libhead"])
 		console.log(this.refHeader)
-		console.log("WHTA IS GOING ON")
 		// let wow = ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect().top
 		// this.setState({refLibHeader: ReactDOM.findDOMNode(this.refs["libhead"])})
 		// console.log(wow)
@@ -50,7 +49,7 @@ class AppLayer extends Component{
 		// let wow = ReactDOM.findDOMNode(this.refs["libhead"]).getBoundingClientRect().top
 
 		// this.setState({top: 0})
-		console.log(this.refHeader.getBoundingClientRect().top)
+		// console.log(this.refHeader.getBoundingClientRect().top)
 		this.props.myDivSize(this.refHeader.getBoundingClientRect().top)
 		// console.log("sweet christmas")
 					// <div className="AppLayer" id="AppLayer"  onScroll= { this.findMySize.bind(this) }>
