@@ -64,7 +64,7 @@ class App extends Component {
 		// console.log(this.mainHeader.getBoundingClientRect().height )
 
 		// this.mainHeader.getBoundingClientRect().height
-		if(divTop < this.mainHeader.getBoundingClientRect().height){
+		if(divTop < 49){
 			this.setState({
 				isHeaderHidden: true
 			})

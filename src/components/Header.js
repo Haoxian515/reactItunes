@@ -38,8 +38,12 @@ class Header extends Component{
 	constructor(props){
 		super(props)
 		console.log("HEADER CLASS" + this.props.isHeaderHidden)
+		this.firstTime = false;
+
 	}
 
+
+	// "Library "{this.props.isHeaderHidden ? 'hidden' : 'fade-in-element' } 
 
 	render(){
 		return(
@@ -48,7 +52,7 @@ class Header extends Component{
 				<div id="Filler">
 					
 				</div>
-				<div className={this.props.isHeaderHidden ? 'hidden Library' : 'Library fade-in-element' }>
+				<div className={this.props.isHeaderHidden ? 'Library hidden fade-out-element' : 'fade-in-element' }>
 					Library
 				</div>
 				<div id="Edit">
