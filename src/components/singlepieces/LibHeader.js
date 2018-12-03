@@ -16,7 +16,7 @@ class LibHeader extends Component{
 	render(){
 		return(
 			<div>
-				<h2 className="h2-single">HIOA</h2>
+				<h2 className="h2-single">Library</h2>
 			</div>
 		)
 	}
